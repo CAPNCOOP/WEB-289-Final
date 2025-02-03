@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+/* global */
+
+:root {
+  --main-text: 'Playfair Display';
+  --secondary-text: 'Montserrat';
+}
+
+html {
+  font: 16px Verdana, Geneva, Tahoma, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+body {
+  background-color: #f2e5d7;
+  margin: 0;
+}
+
+/* Content Wrapper */
+
+#content-wrapper {
+  margin: 0 auto;
+  width: 90%;
+}
+
+/* Header - Footer */
+
+header {
+  background-color: rgba(143, 173, 140, 0.6);
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+  position: static;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+nav ul li {
+  list-style-type: none;
+  font: 28px var(--secondary-text);
+  padding: 0 0.5rem;
+}
+
+nav a {
+  color: #f2f2f2;
+  text-decoration: none;
+}
+
+footer {
+  background-color: rgba(143, 173, 140, 0.6);
+  padding: 1rem;
+  font: 24px var(--main-text);
+}
+
+h1 {
+  color: #f2f2f2;
+  font: 48px var(--main-text);
+  margin: 0;
+}
+
+/* Home */
+
+/* slideshow */
+
+.slideshow-container {
+  margin: auto;
+  max-width: 1000px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+  position: relative;
+}
+
+.mySlides img {
+  width: 100%;
+  display: block;
+  transition: filter 0.5s ease-in-out;
+}
+
+.mySlides:hover img {
+  filter: brightness(50%);
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  transform: translateX(-50%);
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  text-align: center;
+  color: white;
+  font: 24px var(--secondary-text);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  background: rgba(0, 0, 0, 0.5); /* Slight background for readability */
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.mySlides .text {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.mySlides:hover .text {
+  opacity: 1;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
