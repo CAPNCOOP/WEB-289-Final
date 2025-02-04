@@ -56,13 +56,21 @@ nav ul {
 
 nav ul li {
   list-style-type: none;
-  font: 28px var(--secondary-text);
+  font: 22px var(--secondary-text);
   padding: 0 0.5rem;
 }
 
 nav a {
   color: var(--light);
   text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--tertiary-color);
+}
+
+nav a img:hover {
+  filter: invert(1);
 }
 
 h1 {
@@ -266,14 +274,28 @@ form {
 .aboutus h2 {
   font: 64px var(--main-text);
   text-align: center;
+  text-decoration: underline;
 }
 
-.aboutus section {
+.aboutus main section {
   display: flex;
+  gap: 1rem;
   flex-direction: column;
+  padding: 1.5rem;
 }
 
 .aboutus-item {
   display: flex;
   flex-direction: row !important;
+  gap: 1rem;
 }
+
+.aboutus-item .aboutus-item:nth-of-type(2) {
+  flex-direction: row-reverse !important;
+}
+
+.aboutus-item p {
+  font: 32px var(--secondary-text);
+}
+
+/* User Login */
