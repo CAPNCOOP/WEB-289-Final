@@ -7,6 +7,8 @@
   --main-color: #f2e5d7;
   --secondary-color: #303a2b;
   --tertiary-color: #628395;
+  --light: #f2f2f2;
+  --dark: #333;
 }
 
 html {
@@ -59,20 +61,28 @@ nav ul li {
 }
 
 nav a {
-  color: #f2f2f2;
+  color: var(--light);
   text-decoration: none;
 }
 
-footer {
-  background-color: rgba(143, 173, 140, 0.6);
-  padding: 1rem;
-  font: 24px var(--main-text);
-}
-
 h1 {
-  color: #f2f2f2;
+  color: var(--light);
   font: 48px var(--main-text);
   margin: 0;
+}
+
+footer {
+  background-color: var(--secondary-color);
+  color: var(--light);
+  display: flex;
+  font: 18px var(--secondary-text);
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+footer a {
+  color: var(--light);
+  text-decoration: none;
 }
 
 /* Home */
@@ -187,12 +197,12 @@ main > div:first-of-type {
 }
 
 .text a:hover {
-  color: #f2f2f2;
+  color: var(--light);
 }
 
 /* Number text (1/3 etc) */
 .numbertext {
-  color: #f2f2f2;
+  color: var(--light);
   font-size: 12px;
   padding: 8px 12px;
   position: absolute;
@@ -235,7 +245,35 @@ main > div:first-of-type {
 /* Our Vendors */
 
 form {
+  align-items: center;
   background-color: var(--tertiary-color);
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1rem auto;
   padding: 3rem;
-  width: 30%;
+  width: 50%;
+}
+
+.search-bar input {
+  border-radius: 10px;
+  height: 30px;
+  width: 250px;
+}
+
+/* About Us */
+
+.aboutus h2 {
+  font: 64px var(--main-text);
+  text-align: center;
+}
+
+.aboutus section {
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutus-item {
+  display: flex;
+  flex-direction: row !important;
 }
