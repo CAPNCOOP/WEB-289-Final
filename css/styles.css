@@ -4,6 +4,9 @@
 :root {
   --main-text: 'Playfair Display';
   --secondary-text: 'Montserrat';
+  --main-color: #f2e5d7;
+  --secondary-color: #303a2b;
+  --tertiary-color: #628395;
 }
 
 html {
@@ -20,7 +23,7 @@ img {
 }
 
 body {
-  background-color: #f2e5d7;
+  background-color: var(--main-color);
   margin: 0;
 }
 
@@ -34,7 +37,7 @@ body {
 /* Header - Footer */
 
 header {
-  background-color: rgba(143, 173, 140, 0.6);
+  background-color: var(--secondary-color);
   align-items: center;
   display: flex;
   flex-direction: row;
@@ -74,13 +77,55 @@ h1 {
 
 /* Home */
 
+/* Hero Image Section */
+
+.hero-image {
+  background: url('/img/hero.jpg') center / cover no-repeat;
+  height: 45vw;
+  position: relative;
+}
+
+.static-text {
+  font: 72px var(--main-text);
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+#text {
+  font: 48px var(--secondary-text);
+  text-align: center;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.caret {
+  display: inline-block;
+  width: 10px;
+  margin-left: 5px;
+  animation: blink 1s infinite;
+}
+
+/* Main Paragraph */
+
+main > div:first-of-type {
+  font: 20px var(--secondary-text);
+}
+
 /* slideshow */
 
 .slideshow-container {
   margin: auto;
   max-width: 1000px;
   position: relative;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Hide the images by default */
@@ -95,11 +140,6 @@ h1 {
   transition: filter 0.5s ease-in-out;
 }
 
-.mySlides:hover img {
-  filter: brightness(50%);
-}
-
-/* Next & previous buttons */
 .prev,
 .next {
   cursor: pointer;
@@ -112,18 +152,15 @@ h1 {
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
-  transform: translateX(-50%);
   border-radius: 0 3px 3px 0;
   user-select: none;
 }
 
-/* Position the "next button" to the right */
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
@@ -139,20 +176,18 @@ h1 {
   text-align: center;
   color: white;
   font: 24px var(--secondary-text);
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
   background: rgba(0, 0, 0, 0.5); /* Slight background for readability */
   padding: 20px;
   border-radius: 8px;
 }
 
-.mySlides .text {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+.text a {
+  color: #628395;
+  text-decoration: none;
 }
 
-.mySlides:hover .text {
-  opacity: 1;
+.text a:hover {
+  color: #f2f2f2;
 }
 
 /* Number text (1/3 etc) */
@@ -173,6 +208,7 @@ h1 {
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
+  margin: 0.25rem;
   transition: background-color 0.6s ease;
 }
 
@@ -194,4 +230,12 @@ h1 {
   to {
     opacity: 1;
   }
+}
+
+/* Our Vendors */
+
+form {
+  background-color: var(--tertiary-color);
+  padding: 3rem;
+  width: 30%;
 }
