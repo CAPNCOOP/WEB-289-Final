@@ -8,51 +8,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
-  <body>
-    <section>
-      <header>
-        <h1>Blue Ridge Bounty</h1>
-        <nav>
-          <ul>
-            <li><a href="index.html"><img src="img/barn.png" alt="An icon of a barn" height="25" width="25"></a></li>
-            <li><a href="schedule.html">Schedule</a></li>
-            <li><a href="ourvendors.html">Our Vendors</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
-            <li><a href="login.html"><img src="img/user.png" alt="A user login icon." height="25" width="25"></a></li>
-          </ul>
-        </nav>
-      </header>
-    </section>
+  <body class="login">
+    <header>
+      <h1>Blue Ridge Bounty</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html"><img src="img/barn.png" alt="An icon of a barn" height="25" width="25"></a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="ourvendors.html">Our Vendors</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="login.html"><img src="img/user.png" alt="A user login icon." height="25" width="25"></a></li>
+        </ul>
+      </nav>
+    </header>
 
     <main>
-      <form action="login" class="user-login">
-        <fieldset>
-          <legend>Log In</legend>
-          <img src="img/user.png" alt="A user icon." height="25" width="25">
-          <input type="text" name="username" placeholder="username">
-          <img src="img/lock.png" alt="A lock icon." height="25" width="25">
-          <input type="text" name="password" placeholder="password">
-        </fieldset>
+      <form action="login" method="POST" class="user-login">
+        <legend>Log In</legend>
 
-        <fieldset>
-          <caption>Items with * are required!</caption>
-          <legend>New User? Create account here!</legend>
-          <label for="username">Username: </label>
-          <input type="text" name="username" placeholder="*">
-          <label for="fname" name="fname">First Name: </label>
-          <input type="text" name="fname" placeholder="*">
-          <label for="lname">Last Name: </label>
-          <input type="text" name="lname" placeholder="*">
-          <label for="email">Email</label>
-          <input type="text" name="email" placeholder="*">
-          <label for="password">Password: </label>
-          <input type="text" name="password" placeholder="*">
-          <label for="confirmpass">Confirm Password: </label>
-          <input type="text" name="confirmpass">
-        </fieldset>
+        <label for="login-username">
+          <img src="img/user.png" alt="User icon" height="25" width="25">
+          Username:
+        </label>
+        <input type="text" id="login-username" name="username" placeholder="Enter your username" required>
+
+        <label for="login-password">
+          <img src="img/lock.png" alt="Lock icon" height="25" width="25">
+          Password:
+        </label>
+        <input type="password" id="login-password" name="password" placeholder="Enter your password" required>
+
+        <button type="submit">Log In</button>
       </form>
-    </main>
 
+      <form action="login" method="POST" class="new-user-login">
+        <legend>New User? Create an account!</legend>
+
+        <p>Items with * are required.</p>
+
+        <label for="register-username">Username: *</label>
+        <input type="text" id="register-username" name="username" placeholder="Choose a username" required>
+
+        <label for="register-fname">First Name: *</label>
+        <input type="text" id="register-fname" name="fname" placeholder="Your first name" required>
+
+        <label for="register-lname">Last Name: *</label>
+        <input type="text" id="register-lname" name="lname" placeholder="Your last name" required>
+
+        <label for="register-email">Email: *</label>
+        <input type="email" id="register-email" name="email" placeholder="Your email" required>
+
+        <label for="register-password">Password: *</label>
+        <input type="password" id="register-password" name="password" placeholder="Create a password" required>
+
+        <label for="register-confirmpass">Confirm Password: *</label>
+        <input type="password" id="register-confirmpass" name="confirmpass" placeholder="Confirm your password" required>
+
+        <button type="submit">Sign Up</button>
+      </form>
+
+      <footer>
+        <span>Blue Ridge Bounty &copy; 2025</span>
+        <a href="aboutus.html#contact">Contact Us</a>
+      </footer>
   </body>
 
 </html>

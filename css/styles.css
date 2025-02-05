@@ -62,15 +62,15 @@ nav ul li {
 
 nav a {
   color: var(--light);
+  display: inline-block;
+  opacity: 0.75;
   text-decoration: none;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
 nav a:hover {
-  color: var(--tertiary-color);
-}
-
-nav a img:hover {
-  filter: invert(1);
+  opacity: 1;
+  transform: translateY(-3px);
 }
 
 h1 {
@@ -274,7 +274,11 @@ form {
 .aboutus h2 {
   font: 64px var(--main-text);
   text-align: center;
-  text-decoration: underline;
+}
+
+.aboutus div:nth-last-of-type(1) {
+  width: 80%;
+  margin: 0 auto;
 }
 
 .aboutus main section {
@@ -286,16 +290,45 @@ form {
 
 .aboutus-item {
   display: flex;
-  flex-direction: row !important;
+  flex-direction: row;
   gap: 1rem;
+  margin: 0;
 }
 
-.aboutus-item .aboutus-item:nth-of-type(2) {
+.aboutus-item:nth-of-type(2) {
   flex-direction: row-reverse !important;
+  text-align: right;
 }
 
 .aboutus-item p {
   font: 32px var(--secondary-text);
 }
 
+.aboutus div div:last-of-type {
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
 /* User Login */
+
+.login {
+  background: url('/img/blueberries.jpg') center / cover no-repeat;
+}
+
+.login main {
+  display: flex;
+}
+
+.login form {
+  background-color: #628395cc;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+form.user-login {
+  background-color: #f2e5d7cc;
+}
